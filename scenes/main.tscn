@@ -9,6 +9,7 @@
 script = ExtResource("1_o5qli")
 
 [node name="start" parent="." instance=ExtResource("2_jyhfs")]
+process_mode = 3
 
 [node name="fingers" parent="." instance=ExtResource("2_0wfyh")]
 visible = false
@@ -17,6 +18,6 @@ scale = Vector2(2.25, 2.25)
 
 [node name="knife" parent="." instance=ExtResource("3_sugp2")]
 visible = false
-position = Vector2(130, 254)
+position = Vector2(69, 231)
 
 [connection signal="startgame" from="start" to="." method="_on_start_startgame"]

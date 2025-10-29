@@ -4,18 +4,24 @@ var score = 0
 func _ready():
 	$fingers.hide()
 	$knife.hide()
+	get_tree().paused = true
 	
-func _setup():
+
+func _setup():	
+	get_tree().paused = false 
 	$fingers.show()
 	$knife.show()
 	score = 0 
 	
+
 func _on_start_startgame() -> void:
-	_setup()
 	$start.hide()
+	_setup()
 	
+
 func _process(_delta: float) -> void:
 	_getInput()
+	
 
 func _getInput():
 	if Input.is_action_just_pressed("lMouse"):
