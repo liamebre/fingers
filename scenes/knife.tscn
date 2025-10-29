@@ -1,18 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4fsllfs1ocie"]
+[gd_scene load_steps=2 format=3 uid="uid://b4fsllfs1ocie"]
 
 [ext_resource type="Texture2D" uid="uid://cxbxibmo28ap3" path="res://assets/knife.png" id="1_ufhdc"]
-
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_srw2c"]
-points = PackedVector2Array(16, -221, -19, -224, -16, -23, 0, 0, 12, -24)
 
 [node name="knife" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-texture_filter = 1
-shape = SubResource("ConvexPolygonShape2D_srw2c")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-1.90735e-06, 0.91777)
+scale = Vector2(1, 1.00481)
+polygon = PackedVector2Array(-1, -5, 9, -13, 9, -69, 12, -110, 8, -147, -14, -148, -13, -30)
 
 [node name="Knife" type="Sprite2D" parent="."]
 position = Vector2(-1, -116)
 texture = ExtResource("1_ufhdc")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+offset_right = 4.0
+offset_bottom = 27.0

@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://8pw1027wfucf"]
+[gd_scene load_steps=12 format=3 uid="uid://8pw1027wfucf"]
 
 [ext_resource type="Script" uid="uid://cpmjyqxisljnv" path="res://scripts/finger.gd" id="1_720ec"]
 [ext_resource type="Texture2D" uid="uid://dwhef1cekt7qg" path="res://assets/pinkey.png" id="1_ple3j"]
 [ext_resource type="Texture2D" uid="uid://cwmago6vfq4xs" path="res://assets/ring.png" id="2_4cckd"]
 [ext_resource type="Texture2D" uid="uid://djv1xg1r606hc" path="res://assets/middle.png" id="3_dtcej"]
 [ext_resource type="Texture2D" uid="uid://ndlrnpa54pe6" path="res://assets/thumb.png" id="4_jgy7n"]
+[ext_resource type="Texture2D" uid="uid://bn0t7onvjss8c" path="res://assets/point.png" id="5_bisjf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_knt1r"]
 size = Vector2(44, 125)
@@ -16,7 +17,7 @@ size = Vector2(44, 172)
 size = Vector2(54, 197)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_720ec"]
-size = Vector2(51, 171)
+size = Vector2(44.1078, 169.767)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bisjf"]
 size = Vector2(53.1665, 112.434)
@@ -24,7 +25,7 @@ size = Vector2(53.1665, 112.434)
 [node name="fingers" type="Node2D"]
 script = ExtResource("1_720ec")
 
-[node name="pinkey" type="StaticBody2D" parent="."]
+[node name="pinkey" type="Area2D" parent="."]
 position = Vector2(-145, -53)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pinkey"]
@@ -37,7 +38,7 @@ texture_filter = 1
 position = Vector2(-1.50483, -1.31738)
 texture = ExtResource("1_ple3j")
 
-[node name="ring" type="StaticBody2D" parent="."]
+[node name="ring" type="Area2D" parent="."]
 position = Vector2(-74, -77)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ring"]
@@ -50,7 +51,7 @@ texture_filter = 1
 position = Vector2(3.47793, -0.950805)
 texture = ExtResource("2_4cckd")
 
-[node name="middle" type="StaticBody2D" parent="."]
+[node name="middle" type="Area2D" parent="."]
 position = Vector2(0, -100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="middle"]
@@ -62,31 +63,38 @@ texture_filter = 1
 position = Vector2(3, 6)
 texture = ExtResource("3_dtcej")
 
-[node name="point" type="StaticBody2D" parent="."]
+[node name="point" type="Area2D" parent="."]
 position = Vector2(79, -84)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="point"]
 texture_filter = 2
-position = Vector2(-21, 7)
+position = Vector2(-21.4851, 6.86334)
 rotation = 0.240855
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_720ec")
 
-[node name="Ring" type="Sprite2D" parent="point/CollisionShape2D"]
+[node name="Point" type="Sprite2D" parent="point/CollisionShape2D"]
 texture_filter = 1
-position = Vector2(3.40747, -2.8964)
-texture = ExtResource("2_4cckd")
+position = Vector2(3.41711, -0.698593)
+rotation = -0.0331608
+scale = Vector2(1.04807, 1.03405)
+texture = ExtResource("5_bisjf")
 
-[node name="thumb" type="StaticBody2D" parent="."]
+[node name="thumb" type="Area2D" parent="."]
 position = Vector2(173, -44)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="thumb"]
 position = Vector2(-5, 23)
 rotation = 0.767945
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bisjf")
 
 [node name="Thumb" type="Sprite2D" parent="thumb/CollisionShape2D"]
 texture_filter = 1
 position = Vector2(0.719343, -0.694661)
-scale = Vector2(1, 1)
 texture = ExtResource("4_jgy7n")
+
+[connection signal="area_entered" from="pinkey" to="." method="_on_pinkey_area_entered"]
+[connection signal="area_entered" from="ring" to="." method="_on_ring_area_entered"]
+[connection signal="area_entered" from="middle" to="." method="_on_middle_area_entered"]
+[connection signal="area_entered" from="point" to="." method="_on_point_area_entered"]
+[connection signal="area_entered" from="thumb" to="." method="_on_thumb_area_entered"]
