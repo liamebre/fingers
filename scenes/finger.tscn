@@ -52,7 +52,7 @@ position = Vector2(3.47793, -0.950805)
 texture = ExtResource("2_4cckd")
 
 [node name="middle" type="Area2D" parent="."]
-position = Vector2(0, -100)
+position = Vector2(3, -102)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="middle"]
 position = Vector2(-9, 2)
@@ -60,7 +60,7 @@ shape = SubResource("RectangleShape2D_jgy7n")
 
 [node name="Middle" type="Sprite2D" parent="middle/CollisionShape2D"]
 texture_filter = 1
-position = Vector2(3, 6)
+position = Vector2(5, 4)
 texture = ExtResource("3_dtcej")
 
 [node name="point" type="Area2D" parent="."]
@@ -68,14 +68,13 @@ position = Vector2(79, -84)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="point"]
 texture_filter = 2
-position = Vector2(-21.4851, 6.86334)
+position = Vector2(-14, 7)
 rotation = 0.240855
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_720ec")
 
 [node name="Point" type="Sprite2D" parent="point/CollisionShape2D"]
 texture_filter = 1
-position = Vector2(3.41711, -0.698593)
+position = Vector2(3.91117, -2.8794)
 rotation = -0.0331608
 scale = Vector2(1.04807, 1.03405)
 texture = ExtResource("5_bisjf")

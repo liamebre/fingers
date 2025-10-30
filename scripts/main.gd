@@ -8,15 +8,19 @@ func _ready():
 	
 
 func _setup():	
-	get_tree().paused = false 
 	$fingers.show()
 	$knife.show()
 	score = 0 
 	
 
+func _start():
+	get_tree().paused = false 
+	
+
 func _on_start_startgame() -> void:
 	$start.hide()
 	_setup()
+	$setupTimer.start()
 	
 
 func _process(_delta: float) -> void:
@@ -28,3 +32,6 @@ func _getInput():
 		$knife.position = get_global_mouse_position()
 		score +=1
 	
+
+func _on_setup_timer_timeout() -> void:
+	get_tree().paused = false 

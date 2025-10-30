@@ -20,4 +20,10 @@ scale = Vector2(2.25, 2.25)
 visible = false
 position = Vector2(69, 231)
 
+[node name="setupTimer" type="Timer" parent="."]
+process_mode = 3
+wait_time = 0.5
+one_shot = true
+
 [connection signal="startgame" from="start" to="." method="_on_start_startgame"]
+[connection signal="timeout" from="setupTimer" to="." method="_on_setup_timer_timeout"]
