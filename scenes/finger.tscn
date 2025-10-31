@@ -42,13 +42,13 @@ texture = ExtResource("1_ple3j")
 position = Vector2(-74, -77)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ring"]
-position = Vector2(-11, 1)
+position = Vector2(-10, 3)
 rotation = -0.321141
 shape = SubResource("RectangleShape2D_dtcej")
 
 [node name="Ring" type="Sprite2D" parent="ring/CollisionShape2D"]
 texture_filter = 1
-position = Vector2(3.47793, -0.950805)
+position = Vector2(2.2134, -0.317579)
 texture = ExtResource("2_4cckd")
 
 [node name="middle" type="Area2D" parent="."]
@@ -74,7 +74,7 @@ shape = SubResource("RectangleShape2D_720ec")
 
 [node name="Point" type="Sprite2D" parent="point/CollisionShape2D"]
 texture_filter = 1
-position = Vector2(3.91117, -2.8794)
+position = Vector2(2.9134, -0.715598)
 rotation = -0.0331608
 scale = Vector2(1.04807, 1.03405)
 texture = ExtResource("5_bisjf")
@@ -89,11 +89,19 @@ shape = SubResource("RectangleShape2D_bisjf")
 
 [node name="Thumb" type="Sprite2D" parent="thumb/CollisionShape2D"]
 texture_filter = 1
-position = Vector2(0.719343, -0.694661)
+position = Vector2(2.85268, -2.48205)
+scale = Vector2(1, 1.01995)
 texture = ExtResource("4_jgy7n")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 214.0
+offset_top = -31.0
+offset_right = 264.0
+text = "press"
 
 [connection signal="area_entered" from="pinkey" to="." method="_on_pinkey_area_entered"]
 [connection signal="area_entered" from="ring" to="." method="_on_ring_area_entered"]
 [connection signal="area_entered" from="middle" to="." method="_on_middle_area_entered"]
 [connection signal="area_entered" from="point" to="." method="_on_point_area_entered"]
 [connection signal="area_entered" from="thumb" to="." method="_on_thumb_area_entered"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

@@ -13,7 +13,7 @@ config_version=5
 config/name="fingers"
 run/main_scene="uid://bku2uxq4fu8yj"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-boot_splash/show_image=false
+boot_splash/image="uid://ndlrnpa54pe6"
 config/icon="res://fingers/icon.svg"
 
 [input]
