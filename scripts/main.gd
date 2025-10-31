@@ -25,6 +25,7 @@ func _on_start_startgame() -> void:
 
 func _process(_delta: float) -> void:
 	_getInput()
+	$display._getscore($fingers.score)
 	
 
 func _getInput():

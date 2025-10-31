@@ -14,8 +14,3 @@ polygon = PackedVector2Array(-1, -5, 9, -13, 9, -69, 12, -110, 8, -147, -14, -14
 [node name="Knife" type="Sprite2D" parent="."]
 position = Vector2(-1, -116)
 texture = ExtResource("1_ufhdc")
-
-[node name="ProgressBar" type="ProgressBar" parent="."]
-visible = false
-offset_right = 4.0
-offset_bottom = 27.0
