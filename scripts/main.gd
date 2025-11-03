@@ -4,12 +4,14 @@ var score = 0
 func _ready():
 	$fingers.hide()
 	$knife.hide()
+	$display.hide()
 	get_tree().paused = true
 	
 
 func _setup():	
 	$fingers.show()
 	$knife.show()
+	$display.show()
 	score = 0 
 	
 
